@@ -1,0 +1,1 @@
+This folder should contained saved models and checkpoints.
