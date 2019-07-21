@@ -17,16 +17,16 @@ nltk.download('punkt')
 
 # TODO: add resume option
 def train(
-        num_epochs: int = 2,
-        lr: float = 1e-4,
-        batch_size: int = 16,
-        vocab_threshold: int = 5,
-        vocab_from_file: bool = True,
-        embed_size: int = 512,
-        hidden_size: int = 512,
-        save_every: int = 1,
-        print_every: int = 100,
-        log_file: str = 'training_log.txt'
+        num_epochs: int,
+        lr: float,
+        batch_size: int,
+        vocab_threshold: int,
+        vocab_from_file: bool,
+        embed_size: int,
+        hidden_size: int,
+        save_every: int,
+        print_every: int,
+        log_file: str
 )-> None:
     """
     Train the captioning network with the required parameters.
@@ -45,8 +45,7 @@ def train(
     print_every:        Number of batches for printing average loss.
     log_file:           Name of the training log file. Saves loss and perplexity.
 
-    :return:
-        """
+    """
 
     transform_train = transforms.Compose([
         transforms.Resize(256),                          # smaller edge of image resized to 256

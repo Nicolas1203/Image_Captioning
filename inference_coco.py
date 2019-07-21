@@ -5,17 +5,16 @@ from torchvision import transforms
 import os
 import torch
 from model import EncoderCNN, DecoderRNN
-from utils import clean_sentence, get_prediction
+from utils import get_prediction
 sys.path.append('/opt/cocoapi/PythonAPI')
 
 
 def inference_coco(
-        encoder_file: str = 'CPU_512_encoder-3.pkl',
-        decoder_file: str = 'CPU_512_decoder-3.pkl',
-        embed_size: int = 512,
-        hidden_size: int = 512,
-        from_cpu: bool = True
-
+        encoder_file: str,
+        decoder_file: str,
+        embed_size: int,
+        hidden_size: int,
+        from_cpu: bool
 ) -> None:
     """
     Displays an original image from coco test dataset and prints its associated caption.
