@@ -1,4 +1,5 @@
 .idea/*
 models/*pkl
+models/*pkl.backup
 *pkl
 __pycache__/*

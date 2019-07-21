@@ -11,7 +11,7 @@ to display the available options.
 
 Training a model
 ----------------
-TODO
+run `python3 run.py --train`
 
 Visualizing results on coco test
 --------------------------------
@@ -32,7 +32,58 @@ COCO dataset
 
 * First, clone the [coco api repository](https://github.com/cocodataset/cocoapi) into `/opt` directory
 * Then, go to [coco website](http://cocodataset.org/#download) and download the 2014 test and train images.
-* Create an image folder and an annotation folder: `mkdir /opt/cocoapi/images` and `mkdir /opt/cocoapi/annotations`.
+* Create an image folder: `mkdir /opt/cocoapi/images`
 * Unzip the train and test images into `/opt/cocoapi/images`.
-* Unzip the train and test annotations into `/opt/cocoapi/annotations`
+* Unzip the train and test annotations into `/opt/cocoapi/`
+
+Your `/opt/cocoapi` directory should look like:
+```bash
+├── annotations
+│   ├── captions_train2014.json
+│   ├── captions_val2014.json
+│   ├── image_info_test2014.json
+│   ├── instances_train2014.json
+│   ├── instances_val2014.json
+│   ├── person_keypoints_train2014.json
+│   └── person_keypoints_val2014.json
+├── common
+│   ├── gason.cpp
+│   ├── gason.h
+│   ├── maskApi.c
+│   └── maskApi.h
+├── images
+│   ├── test2014
+│   └── train2014
+├── license.txt
+├── LuaAPI
+│   ├── CocoApi.lua
+│   ├── cocoDemo.lua
+│   ├── env.lua
+│   ├── init.lua
+│   ├── MaskApi.lua
+│   └── rocks
+├── MatlabAPI
+│   ├── CocoApi.m
+│   ├── cocoDemo.m
+│   ├── CocoEval.m
+│   ├── CocoUtils.m
+│   ├── evalDemo.m
+│   ├── gason.m
+│   ├── MaskApi.m
+│   └── private
+├── PythonAPI
+│   ├── Makefile
+│   ├── pycocoDemo.ipynb
+│   ├── pycocoEvalDemo.ipynb
+│   ├── pycocotools
+│   └── setup.py
+├── README.txt
+└── results
+    ├── captions_val2014_fakecap_results.json
+    ├── instances_val2014_fakebbox100_results.json
+    ├── instances_val2014_fakesegm100_results.json
+    ├── person_keypoints_val2014_fakekeypoints100_results.json
+    └── val2014_fake_eval_res.txt
+```
+
 

@@ -12,8 +12,10 @@ parser.add_argument('--batch-size', '-b', type=int, default=16, help='Number of 
 # Model parameters
 parser.add_argument('--vocab-threshold', type=int, default=5, help='Minimum word count threshold for '
                                                                    'vocabulary initialisation')
-parser.add_argument('--vocab-from-file', action='store_true', help='Whether to load the vocabulary '
-                                                                   'from a pre-initialized file.')
+parser.add_argument('--vocab-from-file', action='store_true', dest='vocab_from_file',
+                    help='Loads the vocabulary from a pre-initialized file.')
+parser.add_argument('--init-vocab', action='store_true', dest='vocab_from_file',
+                    help='Do not load the vocabulary from a pre-initialized file. Initialize with data.')
 parser.add_argument('--embed-size', type=int, default=512, help='Dimensionality of image and word embeddings.')
 parser.add_argument('--hidden-size', type=int, default=512, help='Number of features in hidden state of '
                                                                  'the RNN decoder.')
@@ -26,6 +28,7 @@ parser.add_argument('--inference-coco', action='store_true',
 parser.add_argument('--encoder-file', type=str, default='CPU_512_encoder-3.pkl', help='Name of the encoder to load.')
 parser.add_argument('--decoder-file', type=str, default='CPU_512_decoder-3.pkl', help='Name of the decoder to load.')
 parser.add_argument('--from-cpu', action='store_true', help='Whether the model has been saved on CPU.')
+parser.set_defaults(vocab_from_file=True)
 args = parser.parse_args()
 # TODO: add config file
 
