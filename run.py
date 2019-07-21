@@ -6,13 +6,13 @@ parser = argparse.ArgumentParser(description='Image Captioning Project')
 # Training options
 parser.add_argument('--train', action='store_true',
                     help='Use this flag for training a network from scratch (resume option coming later')
-parser.add_argument('--learning-rate', '-lr', type=float, defaut=1e-4, help='Learning rate value.')
+parser.add_argument('--learning-rate', '-lr', type=float, default=1e-4, help='Learning rate value.')
 parser.add_argument('--epochs', '-e', type=int, default=3, help='Number of epochs for training.')
 parser.add_argument('--batch-size', '-b', type=int, default=16, help='Number of sentences per batch')
 # Model parameters
 parser.add_argument('--vocab-threshold', type=int, default=5, help='Minimum word count threshold for '
                                                                    'vocabulary initialisation')
-parser.add_argument('--vocab-from-file', action='store-true', help='Whether to load the vocabulary '
+parser.add_argument('--vocab-from-file', action='store_true', help='Whether to load the vocabulary '
                                                                    'from a pre-initialized file.')
 parser.add_argument('--embed-size', type=int, default=512, help='Dimensionality of image and word embeddings.')
 parser.add_argument('--hidden-size', type=int, default=512, help='Number of features in hidden state of '
