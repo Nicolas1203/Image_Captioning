@@ -29,6 +29,7 @@ def get_prediction(encoder, decoder, data_loader, device) -> None:
     orig_image, image = next(iter(data_loader))
     plt.imshow(np.squeeze(orig_image))
     plt.title('Sample Image')
+    plt.savefig('example.png')
     plt.show()
     image = image.to(device)
     features = encoder(image).unsqueeze(1)

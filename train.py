@@ -15,7 +15,7 @@ sys.path.append('/opt/cocoapi/PythonAPI')
 nltk.download('punkt')
 
 
-# TODO: add resume option
+# TODO: add resume training option
 def train(
         num_epochs: int,
         lr: float,

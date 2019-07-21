@@ -21,7 +21,8 @@ parser.add_argument('--hidden-size', type=int, default=512, help='Number of feat
                                                                  'the RNN decoder.')
 parser.add_argument('--save-every', type=int, default=1, help='Number of epochs between each checkpoint saving.')
 parser.add_argument('--print-every', type=int, default=100, help='Number of batches for printing average loss.')
-parser.add_argument('--log-file', type=str, default='Name of the training log file. Saves loss and perplexity.')
+parser.add_argument('--log-file', type=str, default='training_logs.txt',
+                    help='Name of the training log file. Saves loss and perplexity.')
 # Inference options
 parser.add_argument('--inference-coco', action='store_true',
                     help='Inference on a random image from coco test dataset.')

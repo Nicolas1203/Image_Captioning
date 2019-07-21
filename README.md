@@ -11,12 +11,12 @@ to display the available options.
 
 Training a model
 ----------------
-run `python3 run.py --train`
+`python3 run.py --train --epochs 10 --batch-size 16 --log-file training_logs.txt`
 
 Visualizing results on coco test
 --------------------------------
-TODO
-
+If you have an encoder and decoder saved using torch save function:
+`python3 run.py --inference-coco --encoder-file encoder.pkl --decoder-file decoder.pkl`
 
 Requirements
 ------------
@@ -26,6 +26,13 @@ Run `pip3 install -r requirements.txt` to install the required python packages
 This repo has been tested on Ubuntu 16.04, 18.04 and Elementary OS 5.0 Juno.
 
 If you want to use GPU, please be sure that you have CUDA installed.
+
+Example
+-------
+![](example.png)
+
+Prediction: `a display case filled with lots of donuts .`
+
 
 COCO dataset
 ------------
@@ -85,5 +92,10 @@ Your `/opt/cocoapi` directory should look like:
     ├── person_keypoints_val2014_fakekeypoints100_results.json
     └── val2014_fake_eval_res.txt
 ```
+
+TODO:
+----
+* Add resume training option
+* Add video processing support
 
 
